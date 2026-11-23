@@ -1,25 +1,11 @@
 'use strict';
 
-const versions = {
-  cogna: {
-    audience: 'Apresentação para Cogna',
-    proposal: 'Explorar um piloto de apoio à permanência estudantil, com foco em identificar dificuldades nas primeiras semanas e avaliar o alcance das ações de acolhimento.',
-  },
-  vitru: {
-    audience: 'Apresentação para Vitru',
-    proposal: 'Explorar um piloto de ambientação no ensino digital, com foco em ajudar estudantes a organizar a rotina e concluir as primeiras atividades.',
-  },
-};
-
-const requestedVersion = new URLSearchParams(window.location.search).get('versao');
-if (Object.prototype.hasOwnProperty.call(versions, requestedVersion)) {
-  const version = versions[requestedVersion];
-  document.title = `Edgardo | ${version.audience}`;
-  document.querySelector('#audiencia').textContent = version.audience;
-  const proposal = document.querySelector('#proposta');
-  proposal.lastChild.textContent = ` ${version.proposal}`;
-  document.querySelector('[aria-current="page"]').removeAttribute('aria-current');
-  document.querySelector(`[data-version="${requestedVersion}"]`).setAttribute('aria-current', 'page');
+const versionLinks = document.querySelector('.versions');
+if (versionLinks) {
+  const requestedVersion = new URLSearchParams(window.location.search).get('versao');
+  const legacyLink = [...versionLinks.querySelectorAll('a')]
+    .find(link => link.textContent.toLowerCase() === requestedVersion);
+  if (legacyLink) window.location.replace(legacyLink.href + window.location.hash);
 }
 
 // Preencher o caminho relativo quando o vídeo definitivo estiver disponível.
@@ -32,7 +18,7 @@ if (videoSource) {
     placeholder.hidden = false;
     placeholder.querySelector('p').textContent = 'Vídeo indisponível no momento';
   });
-  video.src = videoSource;
+  video.src = new URL(videoSource, document.currentScript.src).href;
   video.hidden = false;
   placeholder.hidden = true;
 }
