@@ -18,7 +18,7 @@ for (const [slug, [company, proposal]] of Object.entries(proposals)) {
     .replace(/  <header class="bar wrap">[\s\S]*?<\/header>\n/, '')
     .replaceAll('./assets/', '../assets/')
     .replace(/<h1 id="titulo">[^\n]*<\/h1>/, '<h1 id="titulo">Olá, sou professor doutor Edgardo</h1>')
-    .replace('podemos construir juntos na EAD.</p>', 'podemos construir juntos na EAD</p>')
+    .replace('podemos construir juntos na EAD.</p>', 'podemos <span class="lead-underline">construir juntos na EAD</span></p>')
     .replace(/<p id="proposta">[^\n]*<\/p>/, () =>
       `<p id="proposta"><strong>Proposta preliminar para ${company}.</strong> ${proposal}</p>`);
   const directory = new URL(`./${slug}/`, import.meta.url);
