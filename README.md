@@ -2,16 +2,18 @@
 
 Apresentação profissional em HTML, CSS e JavaScript. O GitHub Pages serve os arquivos do branch `main` pela raiz.
 
-- Geral: https://edkk.github.io/portfolio-edgardo/
-- Cogna: https://edkk.github.io/portfolio-edgardo/cogna/
-- Vitru: https://edkk.github.io/portfolio-edgardo/vitru/
-
 ## Editar
 
-Atualize o conteúdo comum em `index.html` e as propostas em `gerar-paginas.mjs`. Rode `node gerar-paginas.mjs` e inclua os dois HTML gerados no commit. O GitHub Pages serve as páginas prontas, sem etapa de build.
+O conteúdo e os seis cartões ficam em `index.html`. Para editar a frase padrão de **O que podemos criar**, altere o elemento `#collaboration-intro`. Para cadastrar uma frase personalizada, adicione uma entrada ao objeto `portfolioConfig` em `assets/site.js`. A chave é o valor de `perfil` na URL.
+
+Os endereços antigos `/cogna/` e `/vitru/` levam à página comum.
 
 Para adicionar o vídeo, coloque o MP4 em `assets/media/` e defina `videoSource` em `assets/site.js` como `./media/apresentacao.mp4`. Inclua as legendas em português no HTML comum. Substitua a foto e os demais conteúdos provisórios em `index.html`.
 
 ## Testar
 
-Execute `python3 -m http.server 8000 --bind 127.0.0.1` na raiz. Abra `http://127.0.0.1:8000/` e acesse Cogna e Vitru. Abra as três seções e confira se apenas a proposta muda. Os links antigos com `?versao=cogna` ou `?versao=vitru` encaminham para os endereços novos.
+Execute `python3 -m http.server 8000 --bind 127.0.0.1` na raiz. Abra as URLs abaixo e confirme que só muda o título de **O que podemos criar**.
+
+- Padrão: http://127.0.0.1:8000/
+- Perfil fictício: http://127.0.0.1:8000/?perfil=instituicao-a
+- Perfil desconhecido, com frase padrão: http://127.0.0.1:8000/?perfil=invalido

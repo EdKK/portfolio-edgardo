@@ -73,7 +73,7 @@ summary::marker { color: var(--accent); }
   white-space: nowrap;
 }
 .company-page .lead { margin-top: .5rem; max-width: 44ch; font-size: 1rem; line-height: 1.4; }
-.company-page .lead-underline { text-decoration: underline; }
+.lead .lead-underline { text-decoration: underline; }
 .company-page video { display: block; object-fit: contain; }
 .company-page .screen, .company-page video {
   aspect-ratio: auto;
@@ -173,3 +173,8 @@ summary::marker { color: var(--accent); }
 @container (min-width: 13rem) {
   .work-card { grid-template-columns: minmax(0, 23%) minmax(0, 1fr); }
 }
+
+.collaboration > h3 { margin: 0; color: var(--text); font-size: 1.15rem; line-height: 1.35; }
+.collaboration .work-list { margin-top: .8rem; }
+.collaboration .work-card h4 { margin: 0; color: var(--text); font-size: 1rem; line-height: 1.35; }
+.collaboration > h3, .collaboration > p { overflow-wrap: anywhere; }
