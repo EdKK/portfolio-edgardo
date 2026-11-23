@@ -143,3 +143,33 @@ summary::marker { color: var(--accent); }
   text-underline-offset: .15em;
 }
 .profile-link:hover { background: #2b3d36; }
+
+.work { container-type: inline-size; }
+.work-list { display: grid; gap: .65rem; margin: 0; padding: 0; list-style: none; }
+.work-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: .65rem;
+  padding: .65rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  overflow-wrap: anywhere;
+}
+.work-icon {
+  display: block;
+  width: 100%;
+  max-width: 3rem;
+  height: auto;
+  aspect-ratio: 1;
+  padding: .4rem;
+  border: 1px solid var(--line);
+  border-radius: .35rem;
+  background: var(--surface);
+  color: var(--accent);
+}
+.work-card h3 { margin: 0; color: var(--text); font-size: 1rem; line-height: 1.35; }
+.work-card p { margin-top: .3rem; line-height: 1.45; }
+@container (min-width: 13rem) {
+  .work-card { grid-template-columns: minmax(0, 23%) minmax(0, 1fr); }
+}
