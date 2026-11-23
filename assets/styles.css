@@ -68,7 +68,7 @@ summary::marker { color: var(--accent); }
 .company-page .eyebrow { margin-bottom: .35rem; font-size: .75rem; white-space: nowrap; }
 .company-page .intro { container-type: inline-size; }
 .company-page h1 {
-  font-size: min(3.25rem, 6.25cqi);
+  font-size: min(3.25rem, 6.4cqi);
   line-height: 1.1;
   white-space: nowrap;
 }
