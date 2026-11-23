@@ -17,7 +17,7 @@ for (const [slug, [company, proposal]] of Object.entries(proposals)) {
     .replace('<body>', '<body class="company-page">')
     .replace(/  <header class="bar wrap">[\s\S]*?<\/header>\n/, '')
     .replaceAll('./assets/', '../assets/')
-    .replace(/<h1 id="titulo">[^\n]*<\/h1>/, '<h1 id="titulo">Olá, sou o professor doutor Edgardo</h1>')
+    .replace(/<h1 id="titulo">[^\n]*<\/h1>/, '<h1 id="titulo">Olá, sou professor doutor Edgardo</h1>')
     .replace('podemos construir juntos na EAD.</p>', 'podemos construir juntos na EAD</p>')
     .replace(/<p id="proposta">[^\n]*<\/p>/, () =>
       `<p id="proposta"><strong>Proposta preliminar para ${company}.</strong> ${proposal}</p>`);

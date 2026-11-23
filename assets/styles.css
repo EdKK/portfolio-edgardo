@@ -66,7 +66,12 @@ summary::marker { color: var(--accent); }
   padding-block: clamp(1rem, 3vw, 2rem);
 }
 .company-page .eyebrow { margin-bottom: .35rem; white-space: nowrap; }
-.company-page h1 { font-size: clamp(1.875rem, 4vw, 3.5rem); line-height: 1.05; }
+.company-page .intro { container-type: inline-size; }
+.company-page h1 {
+  font-size: min(3rem, 5.75cqi);
+  line-height: 1.1;
+  white-space: nowrap;
+}
 .company-page .lead { margin-top: .5rem; max-width: 44ch; font-size: 1rem; line-height: 1.4; }
 .company-page video { display: block; object-fit: contain; }
 .company-page .screen, .company-page video {
@@ -81,7 +86,10 @@ summary::marker { color: var(--accent); }
 .company-page .grid { gap: .35rem; }
 .company-page summary { padding: .55rem .75rem; min-height: 44px; font-size: 1rem; }
 @media (min-width: 48rem) {
-  .company-page .hero { gap: clamp(1rem, 4vw, 3rem); }
+  .company-page .hero {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(1rem, 2.5vw, 2rem);
+  }
 }
 @media (max-height: 650px) {
   .company-page .hero { padding-block: .65rem; gap: .6rem; }
