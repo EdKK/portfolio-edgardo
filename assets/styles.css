@@ -60,3 +60,30 @@ summary::marker { color: var(--accent); }
   .hero { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
   .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+.company-page .hero {
+  gap: .75rem;
+  padding-block: clamp(1rem, 3vw, 2rem);
+}
+.company-page .eyebrow { margin-bottom: .35rem; white-space: nowrap; }
+.company-page h1 { font-size: clamp(1.875rem, 4vw, 3.5rem); line-height: 1.05; }
+.company-page .lead { margin-top: .5rem; max-width: 44ch; font-size: 1rem; line-height: 1.4; }
+.company-page video { display: block; object-fit: contain; }
+.company-page .screen, .company-page video {
+  aspect-ratio: auto;
+  height: clamp(7.5rem, 25vh, 15rem);
+  height: clamp(7.5rem, 25svh, 15rem);
+}
+.company-page .screen { padding: .75rem 1rem; }
+.company-page figcaption { margin-top: .25rem; }
+.company-page .paths { padding-block: .75rem 1.25rem; }
+.company-page h2 { margin-bottom: .4rem; font-size: clamp(1.5rem, 3vw, 2.2rem); }
+.company-page .grid { gap: .35rem; }
+.company-page summary { padding: .55rem .75rem; min-height: 44px; font-size: 1rem; }
+@media (min-width: 48rem) {
+  .company-page .hero { gap: clamp(1rem, 4vw, 3rem); }
+}
+@media (max-height: 650px) {
+  .company-page .hero { padding-block: .65rem; gap: .6rem; }
+  .company-page .screen, .company-page video { height: 7.5rem; }
+}

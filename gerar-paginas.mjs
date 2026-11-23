@@ -14,9 +14,11 @@ const proposals = {
 
 for (const [slug, [company, proposal]] of Object.entries(proposals)) {
   const page = template
-    .replace(/    <nav class="versions"[\s\S]*?<\/nav>\n/, '')
+    .replace('<body>', '<body class="company-page">')
+    .replace(/  <header class="bar wrap">[\s\S]*?<\/header>\n/, '')
     .replaceAll('./assets/', '../assets/')
-    .replace('class="brand" href="./"', 'class="brand" href="../"')
+    .replace(/<h1 id="titulo">[^\n]*<\/h1>/, '<h1 id="titulo">Olá, sou o professor doutor Edgardo</h1>')
+    .replace('podemos construir juntos na EAD.</p>', 'podemos construir juntos na EAD</p>')
     .replace(/<p id="proposta">[^\n]*<\/p>/, () =>
       `<p id="proposta"><strong>Proposta preliminar para ${company}.</strong> ${proposal}</p>`);
   const directory = new URL(`./${slug}/`, import.meta.url);
