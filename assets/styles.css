@@ -19,7 +19,7 @@ a { color: inherit; }
 .skip:not(:focus) { transform: translateY(-200%); }
 .bar, .footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem; padding-block: 1rem; }
 .bar { border-bottom: 1px solid var(--line); }
-.brand { font: 700 1.6rem Georgia, serif; text-decoration: none; }
+.brand { font: 700 clamp(1.2rem, 3vw, 1.6rem) Georgia, serif; text-decoration: none; }
 .brand span, h1 span, .eyebrow { color: var(--accent); }
 .versions { display: flex; flex-wrap: wrap; gap: .25rem; }
 .versions a { padding: .65rem .7rem; border-radius: .4rem; font-size: .9rem; text-decoration: none; }
@@ -28,7 +28,7 @@ a { color: inherit; }
 .hero { display: grid; align-items: center; gap: 2rem; padding-block: clamp(2.5rem, 7vw, 5rem); }
 .eyebrow { margin: 0 0 1rem; font-size: .875rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 h1, h2 { font-family: Georgia, serif; font-weight: 400; }
-h1 { margin: 0; font-size: clamp(3.25rem, 9vw, 7rem); line-height: .96; letter-spacing: -.055em; }
+h1 { margin: 0; font-size: clamp(2rem, 5.5vw, 4.25rem); line-height: .96; letter-spacing: -.04em; overflow-wrap: anywhere; }
 .lead { color: var(--muted); font-size: 1.15rem; max-width: 28ch; margin-bottom: 0; }
 figure { margin: 0; min-width: 0; }
 .screen, video { width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
