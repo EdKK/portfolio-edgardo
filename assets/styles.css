@@ -179,3 +179,40 @@ summary::marker { color: var(--accent); }
 .collaboration .work-card { grid-template-columns: 2rem minmax(0, 1fr); }
 .collaboration .work-card h4 { margin: 0; color: var(--text); font-size: 1rem; line-height: 1.35; }
 .collaboration > h3, .collaboration > p { overflow-wrap: anywhere; }
+
+.contact {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  gap: .6rem;
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+}
+.contact h2 { margin: 0; }
+.contact p { max-width: 48ch; margin: 0; color: var(--muted); }
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .55rem;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: .35rem;
+}
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-width: 0;
+  min-height: 44px;
+  max-width: 100%;
+  padding: .5rem .65rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  color: var(--accent);
+  overflow-wrap: anywhere;
+  text-underline-offset: .15em;
+}
+.contact-links a:hover { background: #2b3d36; }
+.contact-links svg { flex: 0 0 1.15rem; width: 1.15rem; }
